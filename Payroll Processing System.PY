@@ -189,11 +189,11 @@ Modified_df["medical_insurance"] = Modified_df["Adjusted_Salary"] * 0.09
 Modified_df["Net Salary"] = (  
 
     Modified_df["Adjusted_Salary"]
-      - ( Modified_df["Adjusted_Salary"] * 0.13)
-        - Modified_df["Deducted Taxes"]  )
-
+        - Modified_df["medical_insurance"] 
+        - Modified_df["deducted_taxes"]  )
 
 
 Sheet_path_2 = r"path\Modified_sheet.xlsx"
 Modified_df.to_excel(Sheet_path_2 , index=False)
+
 
